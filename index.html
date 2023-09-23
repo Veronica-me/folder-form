@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Path and Time</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.css">
+    <script src="https://unpkg.com/bootstrap-table@1.20.2/dist/bootstrap-table.min.js"></script>
+    <!-- -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    
+    <script src="scripts.js" async></script>
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Select a Path and Time</h2>
+        <form id="pathTimeForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="flexLabel" for="pathFolder">Folder<span style="color:red;">*</span></label>
+                    <input type="text" id="selectedFolderName" readonly>
+                    <input type="file" id="folderInput" webkitdirectory directory multiple style="display: none">
+                    <button type="button" class="btn btn-primary" onclick="selectFolder()">Select Folder</button>
+                </div>
+                <div class="col-md-2">
+                    <label for="appt">Select a time:</label>
+                    <input type="time" id="appt" name="appt">
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container mt-5">
+        <h2>Activity log</h2>
+
+        <table id="table-activity" class="table table-hover table-responsive"     >
+            <thead class="table-info">
+                <tr class="" >
+                    
+                    <th  data-field="selectedFolderPath">Path</th>
+                    <th  data-field="selectedTime" class="col-md-2">Time</th>
+                    
+                </tr>
+            </thead>
+            <tbody></tbody>
+            
+        </table>
+    </div>
+    <section><p class="error"></p></section>
+    
+</body>
+</html>

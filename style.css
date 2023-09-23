@@ -1,0 +1,14 @@
+body {
+    background-color:whitesmoke;
+    padding-bottom: 60px;
+    
+}
+.wrapper {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+.pickFile {
+    display: flex !important;
+    align-items: center;
+    margin: 0 10px 10px 10px !important;
+}
